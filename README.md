@@ -71,8 +71,7 @@ This project includes a banner timer feature that displays a countdown timer on 
     `
    
 7. **How It Works:**
-   ```bash
-    Banner Timer: The backend stores the banner's start time and duration in seconds. The frontend fetches this data and calculates the remaining time.
-    Display Format: The remaining time is displayed in days, hours, minutes, and seconds format on the banner.
-    Banner Management: Admins can update the banner's details and visibility through the provided API endpoints.
-   ```
+    - Banner Timer: The backend stores the banner's start time and duration in seconds. The frontend fetches this data and calculates the remaining time.
+    - Display Format: The remaining time is displayed in days, hours, minutes, and seconds format on the banner.
+    - Banner Management: Admins can update the banner's details and visibility through the provided API endpoints.
+   
