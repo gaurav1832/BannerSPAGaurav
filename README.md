@@ -24,7 +24,7 @@ This project includes a banner timer feature that displays a countdown timer on 
 
 - Node.js
 - MySQL
-- A MySQL database service (e.g., Aiven for managed MySQL)
+- Any MySQL database service 
 
 ### Backend Setup
 
