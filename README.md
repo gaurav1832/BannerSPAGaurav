@@ -29,7 +29,6 @@ This project includes a banner timer feature that displays a countdown timer on 
 ### Backend Setup
 
 1. **Clone the Repository:**
-
    ```bash
    git clone <repository-url>
    cd <repository-directory>
@@ -38,42 +37,38 @@ This project includes a banner timer feature that displays a countdown timer on 
     npm install
 
 3. **Configure Environment Variables:**
-
-  Create a .env file in the root directory of the backend project and add the following configuration:
-  ```bash
+   Create a .env file in the root directory of the backend project and add the following configuration:
+     ```bash
       PORT // port number
       DB_HOST // database hostname, in my case i am using localhost
       DB_USER // your mysql username
       DB_PASSWORD // your mysql password
       DB_DATABASE // your database name
-  ```
+  
 
-4. **Start the Backend Server:**
-  ```bash
+5. **Start the Backend Server:**
+     ```bash
     cd backend
     npm install
     node index.js
     The server will run on http://localhost:3001.
-  ```
+  
 
 5. **Frontend Setup:**
-Clone the Repository:
+   Clone the Repository:
+      ```bash
+     git clone <repository-url>
+     cd frontend
+     npm install
+     npm start
+      The frontend will be available at http://localhost:3000.
 
-```bash
-
-  git clone <repository-url>
-  cd frontend
-  npm install
-  npm start
-
-  The frontend will be available at http://localhost:3000.
-```
 6. **API Endpoints:**
    ```bash
     GET /api/banner: Fetches banner details including the timer.
     POST /api/banner/toggle: Updates the visibility of the banner.
     POST /api/banner/update: Updates the banner details including timer and start time.
-    ```
+    `
    
 7. **How It Works:**
    ```bash
