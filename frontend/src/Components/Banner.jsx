@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import bannerImage from "../../src/banner-image.png";
 import BannerDashboard from "./BannerDashboard";
+const backend = "https://bannerspagaurav.onrender.com";
 
 export default function Banner() {
   const [remainingTime, setRemainingTime] = useState(0);
@@ -17,7 +18,7 @@ export default function Banner() {
 
   const fetchBanner = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/banner");
+      const response = await axios.get(`${backend}/api/banner`);
       const bannerData = response.data;
       setBanner(bannerData);
     } catch (error) {
@@ -32,7 +33,7 @@ export default function Banner() {
   useEffect(() => {
     const fetchStartTime = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/banner");
+        const response = await axios.get(`${backend}/api/banner`);
         const { startTime, timer } = response.data;
 
         console.log("Start Time:", startTime);

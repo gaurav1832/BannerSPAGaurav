@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { BannerContext } from "./BannerProvider";
 import axios from "axios";
+const backend = "https://bannerspagaurav.onrender.com";
 
 export default function BannerDashboard() {
   const { banner, setBanner } = useContext(BannerContext);
@@ -30,7 +31,7 @@ export default function BannerDashboard() {
 
   const fetchBanner = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/banner");
+      const response = await axios.get(`${backend}/api/banner`);
       const bannerData = response.data;
       setBanner(bannerData);
     } catch (error) {
@@ -53,13 +54,10 @@ export default function BannerDashboard() {
   const handleToggleVisibility = async () => {
     try {
       const newVisibility = !banner.visibility;
-      const response = await axios.post(
-        "http://localhost:3001/api/banner/toggle",
-        {
-          id: banner.id,
-          visibility: newVisibility,
-        }
-      );
+      const response = await axios.post(`${backend}/api/banner/toggle`, {
+        id: banner.id,
+        visibility: newVisibility,
+      });
       if (response.data.success) {
         setBanner((prev) => ({ ...prev, visibility: newVisibility }));
         window.location.reload();
@@ -76,13 +74,10 @@ export default function BannerDashboard() {
 
   const handleUpdateBanner = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3001/api/banner/update",
-        {
-          ...formData,
-          startTime: Math.floor(Date.now() / 1000),
-        }
-      );
+      const response = await axios.post(`${backend}/api/banner/update`, {
+        ...formData,
+        startTime: Math.floor(Date.now() / 1000),
+      });
       if (response.data.success) {
         setBanner((prev) => ({ ...prev, ...formData }));
         alert("Banner updated successfully!");
