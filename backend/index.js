@@ -3,6 +3,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const url = require("url");
 
 const app = express();
 const port = process.env.PORT;
@@ -10,11 +11,18 @@ const port = process.env.PORT;
 app.use(bodyParser.json());
 app.use(cors());
 
+const dbUri = process.env.DB_URI;
+
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
+  uri: dbUri,
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error("Error connecting to the database:", err);
+    return;
+  }
+  console.log("Connected to the database.");
 });
 
 app.get("/api/banner", (req, res) => {

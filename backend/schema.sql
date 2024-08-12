@@ -9,4 +9,8 @@ CREATE TABLE Banner (
   startTime INT
 );
 
- 
+
+-- Dummy entry:
+
+-- INSERT INTO Banner (title, description, timer, link, offer, visibility, startTime)
+-- VALUES ('Independence Day Sale!', 'Get upto 30% off on all courses. Offer valid till August 15, Hurry!.', 3600, 'http://example.com', 'Use code INDIA', TRUE, UNIX_TIMESTAMP());
