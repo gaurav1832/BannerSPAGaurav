@@ -62,10 +62,12 @@ export default function Banner() {
   }, []);
 
   const formatTime = (seconds) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
+    const days = Math.floor(seconds / 86400); // 86400 seconds in a day
+    const hours = Math.floor((seconds % 86400) / 3600); // 3600 seconds in an hour
+    const minutes = Math.floor((seconds % 3600) / 60); // 60 seconds in a minute
     const secs = seconds % 60;
-    return `${hours}h ${minutes}m ${secs}s`;
+
+    return `${days}d, ${hours}h, ${minutes}m, ${secs}s`;
   };
 
   return (
