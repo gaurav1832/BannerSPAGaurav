@@ -115,10 +115,9 @@ export default function Banner() {
         </p>
       )}
 
-      {banner.visibility === 1 && remainingTime > 0 ? (<p className="flex justify-center p-1 text-sm text-red-300">
+       <p className="flex justify-center p-2 text-sm text-red-300">
          *Hold on, it can take a few seconds to show the banner due to the slow onrender backend. 
-        </p>) : <p></p>
-      }
+        </p>
        
       <BannerDashboard />
     </>
