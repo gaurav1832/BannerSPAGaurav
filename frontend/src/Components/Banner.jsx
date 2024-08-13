@@ -114,6 +114,9 @@ export default function Banner() {
           No banner to show.
         </p>
       )}
+      <p className="flex justify-start p-1 text-md text-red-400">
+         Hold on, it can take a few seconds to show the banner due to the slow onrender backend. 
+        </p>
       <BannerDashboard />
     </>
   );
